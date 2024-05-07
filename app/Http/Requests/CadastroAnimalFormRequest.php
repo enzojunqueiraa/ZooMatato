@@ -13,7 +13,7 @@ class CadastroAnimalFormRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,10 +25,10 @@ class CadastroAnimalFormRequest extends FormRequest
     {
         
             return [
-                'nome' => 'required|max:255',
+            'nome' => 'required|max:255',
             'idade' => 'required|integer|min:0',
             'especie' => 'required|max:255',
-            'ra' => 'required|unique:animals|max:255',
+            'ra' => 'required|unique:animals|max:10|min:10',
             'peso' => 'required|numeric|min:0',
             'altura' => 'required|numeric|min:0',
             'sexo' => 'required|max:255',
@@ -57,7 +57,8 @@ class CadastroAnimalFormRequest extends FormRequest
             'especie.max' => 'O campo especie deve conter no máximo 255 caracteres.',
             'ra.required' => 'O campo RA é obrigatório.',
             'ra.unique' => 'O campo RA deve ser único.',
-            'ra.max' => 'O campo RA deve conter no máximo 255 caracteres.',
+            'ra.max' => 'O campo RA deve conter no máximo 10 caracteres.',
+            'ra.min' => 'O campo RA deve conter no mínimo 10 caracteres.',
             'peso.required' => 'O campo peso é obrigatório.',
             'peso.numeric' => 'O campo peso deve ser um número.',
             'peso.min' => 'O campo peso deve ser maior ou igual a 0.',

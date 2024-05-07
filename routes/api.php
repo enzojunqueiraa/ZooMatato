@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Rota para cadastro de animais
-Route::post('/animais/cadastrar', [CadastroAnimalController::class, 'animais']);
+Route::post('/animais/cadastrar', [CadastroAnimalController::class, 'cadastrarAnimais']);
 
 // Rota para pesquisa por nome
 Route::get('/animais/pesquisarPorNome', [CadastroAnimalController::class, 'pesquisarPorNome']);
@@ -18,16 +18,13 @@ Route::get('/animais/pesquisarPorId/{id}', [CadastroAnimalController::class, 'pe
 Route::get('/animais/pesquisarPorEspecie', [CadastroAnimalController::class, 'pesquisarPorEspecie']);
 
 // Rota para exclusão de um animal
-Route::delete('/animais/{id}', [CadastroAnimalController::class, 'excluir']);
+Route::delete('/animais/excluir/{id}', [CadastroAnimalController::class, 'excluir']);
 
 // Rota para retornar todos os animais
-Route::get('/animais', [CadastroAnimalController::class, 'retornarTodos']);
+Route::get('/animais/retornarTodos', [CadastroAnimalController::class, 'retornarTodos']);
 
 // Rota para atualização de um animal
 Route::put('/animais/{id}', [CadastroAnimalController::class, 'updateAnimal']);
 
-// Rota para retornar todos os animais
-Route::get('/animais', [CadastroAnimalController::class, 'retornarTodos']);
-
 // Rota para pesquisa por RA
-Route::get('/animais/pesquisarPorRa/{id}', [CadastroAnimalController::class, 'pesquisarPorRa']);
+Route::get('/animais/pesquisarPorRa', [CadastroAnimalController::class, 'pesquisarPorRa']);

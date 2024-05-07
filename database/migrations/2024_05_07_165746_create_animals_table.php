@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 255,)->nullable(false);
-            $table->string('especie', 120)->nullable(false);
-            $table->decimal('peso', 120)->nullable(false);
-            $table->decimal('altura', 120)->nullable(false);
-            $table->string('sexo', 20)->nullable(false);
-            $table->string('dieta', 200)->nullable(false);
-            $table->string('habitat', 120)->nullable(false);
-            $table->integer('idade')->nullable(false);
-            $table->string('ra',10)->nullable(false);
+            $table->string('nome');
+            $table->integer('idade');
+            $table->string('especie');
+            $table->string('ra')->unique(); 
+            $table->decimal('peso', 8, 2); 
+            $table->decimal('altura', 5, 2); 
+            $table->string('sexo');
+            $table->string('dieta');
+            $table->string('habitat');
             
             $table->timestamps();
         });

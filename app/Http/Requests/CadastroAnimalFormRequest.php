@@ -26,7 +26,7 @@ class CadastroAnimalFormRequest extends FormRequest
         
             return [
             'nome' => 'required|max:255',
-            'idade' => 'required|integer|min:0',
+            'idade' => 'required|min:0',
             'especie' => 'required|max:255',
             'ra' => 'required|unique:animals|max:10|min:10',
             'peso' => 'required|numeric|min:0',
@@ -51,7 +51,6 @@ class CadastroAnimalFormRequest extends FormRequest
             'nome.required' => 'O campo nome é obrigatório.',
             'nome.max' => 'O campo nome deve conter no máximo 255 caracteres.',
             'idade.required' => 'O campo idade é obrigatório.',
-            'idade.integer' => 'O campo idade deve ser um número inteiro.',
             'idade.min' => 'O campo idade deve ser maior ou igual a 0.',
             'especie.required' => 'O campo especie é obrigatório.',
             'especie.max' => 'O campo especie deve conter no máximo 255 caracteres.',

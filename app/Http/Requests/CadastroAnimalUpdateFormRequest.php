@@ -23,7 +23,7 @@ class CadastroAnimalUpdateFormRequest extends FormRequest
     {
         return [
             'nome' => 'max:255',
-            'idade' => 'integer|min:0',
+            'idade' => 'min:0',
             'especie' => 'max:255',
             'ra' => 'max:255|unique:animals,ra,'. $this->id,
             'peso' => 'numeric|min:0',
@@ -38,7 +38,6 @@ class CadastroAnimalUpdateFormRequest extends FormRequest
     {
         return [
             'nome.max' => 'O campo nome deve conter no máximo 255 caracteres',
-            'idade.integer' => 'O campo idade deve ser um número inteiro',
             'idade.min' => 'O campo idade deve ser maior ou igual a 0',
             'especie.max' => 'O campo especie deve conter no máximo 255 caracteres',
             'ra.max' => 'O campo RA deve conter no máximo 255 caracteres',

@@ -24,7 +24,7 @@ Route::delete('/animais/excluir/{id}', [CadastroAnimalController::class, 'exclui
 Route::get('/animais/retornarTodos', [CadastroAnimalController::class, 'retornarTodos']);
 
 // Rota para atualização de um animal
-Route::put('/animais/{id}', [CadastroAnimalController::class, 'updateAnimal']);
+Route::post('/animais/{id}', [CadastroAnimalController::class, 'updateAnimal']);
 
 // Rota para pesquisa por RA
 Route::get('/animais/pesquisarPorRa', [CadastroAnimalController::class, 'pesquisarPorRa']);

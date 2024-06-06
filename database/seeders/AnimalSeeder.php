@@ -20,7 +20,7 @@ class AnimalSeeder extends Seeder
                 'nome' => 'Fido' . $i,
                 'idade' => 5,
                 'especie' => 'Macaco',
-                'ra' => 'RA12345' . $i,
+                'ra' => 'RA12345678' . $i,
                 'peso' => 30.5,
                 'altura' => 60,
                 'sexo' => 'Macho',
